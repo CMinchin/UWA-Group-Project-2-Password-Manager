@@ -4,7 +4,7 @@
 
 ## Description
 
-A password manager is a computer program that allows users to store, generate, and manage their passwords for local applications and online services. A password manager assits in generating and retrieving complex passwords, storing such passwords in an encrypted database, or calculating them on demand. A password manager (or a web browser) can store all your passwords securely, so the user don't have to worry about remembering them. This allows the user to use unique, strong password for all their important accounts (rather than using the same password for all of them, which they should never do). We use Node.js and Express.js to create a RESTful API.  Use Handlebars.js as the template engine. Use MySQL and the Sequelize ORM for the database.Have both GET and POST routes for retrieving and adding new data. Use one new library, package, or technology that we haven’t discussed. Have a folder structure that meets the MVC paradigm. Include authentication (express-session and cookies). Protect API keys and sensitive information with environment variables. Be deployed using Heroku (with data). Responsive and interactive (i.e., accept and respond to user input).
+Our password manager can store, generate, and manage the passwords and online services. It is generating and retrieving complex passwords, storing such passwords in an encrypted database, or calculating them on demand. Our password manager (or a web browser) can store all your passwords securely, so you don't have to worry about remembering them. This allows the user to use unique, strong password for all their important accounts (rather than using the same password for all of them, which they should never do). We use Node.js and Express.js to create a RESTful API.  Use Handlebars.js as the template engine. Use MySQL and the Sequelize ORM for the database.Have both GET and POST routes for retrieving and adding new data. Use one new library, package, or technology that we haven’t discussed. Have a folder structure that meets the MVC paradigm. Include authentication (express-session and cookies). Protect API keys and sensitive information with environment variables. Be deployed using Heroku (with data). Responsive and interactive (i.e., accept and respond to user input).
 
 ## Table of Contents (Optional)
 
@@ -26,31 +26,22 @@ A password manager is a computer program that allows users to store, generate, a
 
 ## Usage
 
-GIVEN a functional Express.js API.
-As a user :
-WHEN I add my database name, MySQL username, and MySQL password to an environment variable file
-THEN I am able to connect to a database using Sequelize
-WHEN I enter schema and seed commands
-THEN a development database is created and is seeded with test data
-WHEN I enter the command to invoke the application
-THEN my server is started and the Sequelize models are synced to the MySQL database
-WHEN I open API GET routes in Insomnia for categories, products, or tags
-THEN the data for each of these routes is displayed in a formatted JSON
-WHEN I test API POST, PUT, and DELETE routes in Insomnia
-THEN I am able to successfully create, update, and delete data in my database
+- Sign up and create a master password
+- Create a strong master password at least 16 character.
+- Install the software and app
+- Create and store log-in credentials for all your many online services.
+- You can change your password and the password manager create and store a new, much stronger password.
+- If you get email that your password has been compromised, simply go back to password manager and will generate the new strong password for you 
 
 ## Demo
 
-https://drive.google.com/file/d/1wiov2ISIq4G28YvjXmK6J8Ot-Sb3zSec/view
 
 ## Credits
+
 - https://github.com/Simon-Xu-Lan
 
-- https://github.com/sam-ngu
-
-- https://github.com/cupacheeno
-
 ## License
+
     This application is covered by the MIT license.
 
 ---
@@ -68,29 +59,22 @@ Pull request are welcome, you can make a constribution at the bottom of any docs
 
 ## Tests
 
-- In Insomnia shows the application's GET routes to return all categories, all products, and all tags being tested: 
-  ![In Insomnia, the user tests “GET tags,” “GET Categories,” and “GET All Products.”.]
-
-- In Insomnia shows the application's GET routes to return a single category, a single product, and a single tag being  tested: 
-  ![In Insomnia, the user tests “GET tag by id,” “GET Category by ID,” and “GET One Product.”]
-
-- In Insomnia shows the application's POST, PUT, and DELETE routes for categories being tested:
-  ![In Insomnia, the user tests “DELETE Category by ID,” “CREATE Category,” and “UPDATE Category.”]
+n/a
 
 ## Questions
 
-If you have any Question you can email us or find us on GitHub
+If you have any Question you can email us or find us on GitHub:
 
-- Marc, email:
-on GitHub: https://github.com/Fishgif
+- Marc, email: fischerbootcamp@gmail.com, 
+on GitHub: [Fishgif](https://github.com/Fishgif)
 
-- Charles Tran, email: charles.tran.96@gmail.com
-on GitHub: https://github.com/CharlesTran96
+- Charles Tran, email: charles.tran.96@gmail.com, 
+on GitHub: [CharlesTran96](https://github.com/CharlesTran96)
 
-- Cameron Minchin, email: cameron.minchin@gmail.com
-on GitHub: https://github.com/TheEpicHamster
+- Cameron Minchin, email: cameron.minchin@gmail.com, 
+on GitHub: [TheEpicHamster](https://github.com/TheEpicHamster)
 
 
-- Bambang, email: djaja@iinet.net.au
-on GitHub: https://github.com/B-smd
+- Bambang, email: djaja@iinet.net.au, 
+on GitHub: [B-smd](https://github.com/B-smd)
 
