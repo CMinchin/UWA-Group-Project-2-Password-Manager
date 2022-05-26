@@ -5,16 +5,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-  <title>Password Vault</title>
+  <title>TRAPPER KEYper</title>
 </head>
 <body>
 
   
  
 <div class="jumbotron text-center">
-  <h1>PASSWORD VAULT</h1>
+  <h1>TRAPPER KEYper</h1>
   
-  <p><button type="button" class="btn btn-primary">+ Add New</button><button type="button" class="btn btn-primary">Log Out </button></p>
+  {{#if logged_in }}
+    <p><button type="button" class="btn btn-primary">+ Add New</button><button type="button" class="btn btn-primary">Log Out </button></p>
+  {{else}}
+    <p><a href="/login" class="btn btn-primary">Log in</a></p>
+  {{/if}}
 </div>
 
 
