@@ -54,6 +54,38 @@ router.get('/password/delete/:id', withAuth, async (req, res) => {
 
 })
 
+router.post('/password/edit/:id', async (req, res) =>{
+  // take in user input
+  const payload = {
+    name: req.body.name,
+    username:req.body.username,
+    password:req.body.password,
+    website:req.body.website,
+    user_id: req.session.user_id,
+  }
+  
+  // update password record in db
+  const password = await Password.findByPk(req.params.id);
+
+
+  await password.update(payload)
+
+  // redirect user to password index
+
+  res.redirect('/password');
+})
+
+
+router.get('/password/edit/:id', async (req, res) => {
+  // get the password by id
+  const password = await Password.findByPk(req.params.id);
+
+  // render password edit view
+  res.render('password/edit', {
+    password: password.get({plain: true}),
+    logged_in: req.session.logged_in
+  })
+})
 router.post('/password/new', withAuth, async (req, res) => {
 
 
