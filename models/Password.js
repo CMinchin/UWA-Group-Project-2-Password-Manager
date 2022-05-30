@@ -11,6 +11,13 @@ Password.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    name: {
+      type: DataTypes.STRING,
+
+    },
+    username: {
+      type: DataTypes.STRING
+    },
     website: {
       type: DataTypes.STRING,
       allowNull: false,

@@ -8,26 +8,26 @@
       <div class="card">
         
         <div class="card-body">
-          <h4 class="card-title">TINDER</h4>
+          <h4 class="card-title">{{ password.name }}</h4>
           <p class="card-text">
             <p class="card-email">
-                  Email: <span>mail@email.com</span>
+                  Email: <span>{{password.username }}</span>
                 </p>
                 <p class="card-password">
-                  Password: <span>12345678</span>
+                  Password: <span> {{ password.password }} </span>
                 </p>
                 <p class="card-website">
-                  Website: <span>www.website.con</span>
+                  Website: <span>{{ password.website }}</span>
                 </p>
                 <a href="#!" class="btn btn-primary">Edit</a>
-                <a href="#!" class="btn btn-primary">Save</a>
-                <a href="#!" class="btn btn-primary">Delete</a>
+            
+                <a href="/password/delete" class="btn btn-primary">Delete</a>
           </p>
           
         </div>
       </div>
 
-      <div>
+      
     </div>
 
     {{/each}}

@@ -23,11 +23,43 @@ router.get('/password', withAuth, async (req, res) =>{
     }
   })
 
+  console.log(passwords);
+
+  const passwordData = passwords.map(password => password.get({plain: true}));
+
   res.render('password/index', {
     logged_in: req.session.logged_in,
-    passwords,
+    passwords: passwordData,
 
   })
-})
+});
+router.get('/password/new', withAuth, async (req, res) => {
+  res.render('password/new', {
+    logged_in: req.session.logged_in,
+
+  })
+});
+
+router.post('/password/new', withAuth, async (req, res) => {
+
+
+  // read the req data
+  const payload = {
+    name: req.body.name,
+    username:req.body.username,
+    password:req.body.password,
+    website:req.body.website,
+    user_id: req.session.user_id,
+  }
+
+  // save the password to db
+  const created = await Password.create(payload);
+
+
+  // redirect the user to password/index
+  res.redirect('/password');
+
+
+});
 
 module.exports = router;
