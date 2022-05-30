@@ -35,6 +35,7 @@ Our password manager can store, generate, and manage the passwords and online se
 
 ## Demo
 
+- [Heroku trapperkeyper app](https://trapperkeyper.herokuapp.com/)
 
 ## Credits
 
@@ -46,8 +47,8 @@ Our password manager can store, generate, and manage the passwords and online se
 
 ---
 ## Badges
+
 ![Badge](https://img.shields.io/badge/License-MIT-blue.svg)
-![badmath](https://img.shields.io/github/languages/top/lernantino/badmath)
 
 ## Features
 
@@ -77,4 +78,3 @@ on GitHub: [TheEpicHamster](https://github.com/TheEpicHamster)
 
 - Bambang, email: djaja@iinet.net.au, 
 on GitHub: [B-smd](https://github.com/B-smd)
-
