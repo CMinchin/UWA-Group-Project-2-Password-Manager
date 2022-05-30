@@ -40,6 +40,20 @@ router.get('/password/new', withAuth, async (req, res) => {
   })
 });
 
+router.get('/password/delete/:id', withAuth, async (req, res) => {
+
+  // find and delete password by id
+  const deleted = await Password.destroy({
+    where: {
+      id: req.params.id,
+    }
+  });
+
+  res.redirect('/password');
+
+
+})
+
 router.post('/password/new', withAuth, async (req, res) => {
 
 
