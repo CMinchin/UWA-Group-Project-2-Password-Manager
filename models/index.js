@@ -6,7 +6,7 @@ User.hasMany(Password, {
   onDelete: 'CASCADE'
 });
 
-Project.belongsTo(User, {
+Password.belongsTo(User, {
   foreignKey: 'user_id'
 });
 

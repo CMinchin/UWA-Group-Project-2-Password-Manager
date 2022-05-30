@@ -1,20 +1,39 @@
-<div class="card">
-  
-  <div class="card-body">
-    <h4 class="card-title">TINDER</h4>
-    <p class="card-text">
-      <p class="card-email">
-            Email: <span>mail@email.com</span>
+
+<div class="container">
+  <div class="row">
+
+    {{#each passwords as |password|}}
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+
+      <div class="card">
+        
+        <div class="card-body">
+          <h4 class="card-title">TINDER</h4>
+          <p class="card-text">
+            <p class="card-email">
+                  Email: <span>mail@email.com</span>
+                </p>
+                <p class="card-password">
+                  Password: <span>12345678</span>
+                </p>
+                <p class="card-website">
+                  Website: <span>www.website.con</span>
+                </p>
+                <a href="#!" class="btn btn-primary">Edit</a>
+                <a href="#!" class="btn btn-primary">Save</a>
+                <a href="#!" class="btn btn-primary">Delete</a>
           </p>
-          <p class="card-password">
-            Password: <span>12345678</span>
-          </p>
-          <p class="card-website">
-            Website: <span>www.website.con</span>
-          </p>
-          <a href="#!" class="btn btn-primary">Edit</a>
-          <a href="#!" class="btn btn-primary">Save</a>
-    </p>
-    
+          
+        </div>
+      </div>
+
+      <div>
+    </div>
+
+    {{/each}}
+
   </div>
+</div>
+
+
 </div>

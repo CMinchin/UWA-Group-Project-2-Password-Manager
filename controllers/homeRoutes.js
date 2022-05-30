@@ -1,5 +1,6 @@
 const router = require('express').Router();
 
+const { Password } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -11,30 +12,21 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/signup', (req, res) => {
-
-  res.render('signup');
-
-})
 
 
+router.get('/password', withAuth, async (req, res) =>{
 
-router.get('/login', (req, res) => {
-  // If the user is already logged in, redirect the request to another route
-  if (req.session.logged_in) {
-    res.redirect('/password');
-    return;
-  }
-
-  res.render('login');
-});
-
-
-router.get('/password',  (req, res) =>{
-
+  // get all the current logged in user password
+  const passwords = await Password.findAll({
+    where: {
+      user_id: req.session.user_id,
+    }
+  })
 
   res.render('password/index', {
-    logged_in: false
+    logged_in: req.session.logged_in,
+    passwords,
+
   })
 })
 
