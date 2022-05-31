@@ -8,5 +8,9 @@ function decrypt(EncryptedValue,password) {
 
 $("#new").submit((event)=>{
     event.preventDefault();
-    fetch('./api/password/new', {method:'post', body: `{}`})
+    fetch('./api/password/new', {method:'post', body: 
+        `{
+            
+        }`
+    })
 });
