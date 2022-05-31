@@ -1,10 +1,10 @@
 const router = require('express').Router();
-const { Project } = require('../../models');
+const { Password } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // router.post('/', withAuth, async (req, res) => {
 //   try {
-//     const newProject = await Project.create({
+//     const newProject = await Password.create({
 //       ...req.body,
 //       user_id: req.session.user_id,
 //     });
@@ -17,7 +17,7 @@ const withAuth = require('../../utils/auth');
 
 // router.delete('/:id', withAuth, async (req, res) => {
 //   try {
-//     const projectData = await Project.destroy({
+//     const projectData = await Password.destroy({
 //       where: {
 //         id: req.params.id,
 //         user_id: req.session.user_id,
@@ -38,7 +38,7 @@ const withAuth = require('../../utils/auth');
 // retrieve all passwords from acc that you are logged in as
 router.get('', withAuth, async (req, res) => {
   try {
-    const passwordsData = await Project.findAll({
+    const passwordsData = await Password.findAll({
       where: {
         user_id: req.session.user_id,
       },
@@ -61,7 +61,7 @@ router.get('', withAuth, async (req, res) => {
 // retrieve specific password from acc you are logged in as 
 router.get('/:id', withAuth, async (req, res) => {
   try {
-    const passwordsData = await Project.findAll({
+    const passwordsData = await Password.findAll({
       where: {
         id: req.params.id,
         user_id: req.session.user_id,
@@ -85,7 +85,8 @@ router.get('/:id', withAuth, async (req, res) => {
 // add password to database
 router.post('/', withAuth, async (req, res) => {
   try {
-    const passwordsData = await Project.create(req.body);
+    req.body.user_id = req.session.user_id
+    const passwordsData = await Password.create(req.body);
 
     const passwords = passwordsData.get({ plain: true });
 
@@ -98,19 +99,21 @@ router.post('/', withAuth, async (req, res) => {
     res.status(200).json(passwords);
   } catch (err) {
     res.status(500).json(err);
+    console.log(err);
   }
 });
 
 // update password in database
-router.patch('/:id', withAuth, async (req, res) => {
+router.post('/:id', withAuth, async (req, res) => {
+  console.log("congrats we got here");
   try {
-    const passwordsData = await Project.update(req.body,{
+    const passwordsData = await Password.update(req.body,{
       where: {
         id: req.params.id,
         user_id: req.session.user_id
       }
     });
-
+    console.log(passwordsData);
     const passwords = passwordsData.get({ plain: true });
 
 
@@ -122,13 +125,14 @@ router.patch('/:id', withAuth, async (req, res) => {
     res.status(200).json(passwords);
   } catch (err) {
     res.status(500).json(err);
+    console.log(err);
   }
 });
 
 // delete password from database
 router.patch('/:id', withAuth, async (req, res) => {
   try {
-    const passwordsData = await Project.destroy(req.body,{
+    const passwordsData = await Password.destroy(req.body,{
       where: {
         id: req.params.id,
         user_id: req.session.user_id
