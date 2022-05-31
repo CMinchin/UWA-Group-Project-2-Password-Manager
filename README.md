@@ -35,7 +35,7 @@ As a group of four: Marc, Cameron, Charles and Bambang, with a group name is: "M
 
 ## Demo
 
-- [Heroku-app-trapperkeyper](https://trapperkeyper.herokuapp.com/)
+- [Heroku trapperkeyper app](https://trapperkeyper.herokuapp.com/)
 
 ## Credits
 
@@ -47,6 +47,7 @@ As a group of four: Marc, Cameron, Charles and Bambang, with a group name is: "M
 
 ---
 ## Badges
+
 ![Badge](https://img.shields.io/badge/License-MIT-blue.svg)
 
 ## Features
@@ -77,4 +78,3 @@ on GitHub: [TheEpicHamster](https://github.com/TheEpicHamster)
 
 - Bambang, email: djaja@iinet.net.au, 
 on GitHub: [B-smd](https://github.com/B-smd)
-
