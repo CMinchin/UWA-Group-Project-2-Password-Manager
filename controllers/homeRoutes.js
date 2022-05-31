@@ -75,7 +75,6 @@ router.post('/password/edit/:id', async (req, res) =>{
   res.redirect('/password');
 })
 
-
 router.get('/password/edit/:id', async (req, res) => {
   // get the password by id
   const password = await Password.findByPk(req.params.id);
@@ -86,6 +85,7 @@ router.get('/password/edit/:id', async (req, res) => {
     logged_in: req.session.logged_in
   })
 })
+
 router.post('/password/new', withAuth, async (req, res) => {
 
 
