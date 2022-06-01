@@ -1,17 +1,16 @@
-<form action="/signup" method="post" style="width: 40%;">
-  <div class="form-group">
-      <p>Create an Account</p>
-    <label for="email">Email</label>
+<form action="/signup" method="post">
+  <div class="form-group" id="email-signup">
+      <h1 id="signup-title">Create an Account</h1>
+    <label for="email">Email:</label>
     <input type="text" class="form-control" id="email" name="email" placeholder="Email">
   </div>
-  <div class="form-group">
-    <label for="password">Password </label>
+  <div class="form-group" id="password-signup">
+    <label for="password">Password:</label>
     <input type="password" class="form-control" id="password" name="password" placeholder="Password">
   </div>
 
-  <div>
-      
-      <button type="submit" class="btn btn-primary">Sign up</button>
+  <div class="col text-center">
+      <button type="submit" class="btn btn-info">Sign up</button>
   </div>
   
 </form>
