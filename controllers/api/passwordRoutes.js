@@ -114,15 +114,15 @@ router.post('/:id', withAuth, async (req, res) => {
       }
     });
     console.log(passwordsData);
-    const passwords = passwordsData.get({ plain: true });
+    //const passwords = passwordsData.get({ plain: true });
 
 
-    if (!passwords) {
+    if (!passwordsData) {
       res.status(404).json([]);
       return;
     }
 
-    res.status(200).json(passwords);
+    res.status(200).json(passwordsData);
   } catch (err) {
     res.status(500).json(err);
     console.log(err);

@@ -43,7 +43,7 @@ $("#edit").submit((event)=>{
     }).then((res)=>{
         console.log(res);
         if (res.status==200) {
-            window.location.replace("../");
+            window.location.replace("../../");
         }
     });
 });
