@@ -12,6 +12,12 @@
   <div class="col text-center">
       <button type="submit" class="btn btn-info">Sign up</button>
   </div>
+
+  {{#if error}}
+  <div class="text-danger">
+    {{error}}
+  </div>
+  {{/if}}
   
 </form>
 <script>

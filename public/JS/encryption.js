@@ -6,17 +6,26 @@ function decrypt(EncryptedValue,password) {
     return CryptoJS.AES.decrypt(EncryptedValue,password).toString(CryptoJS.enc.Utf8);
 }
 
-const password = localStorage.getItem("password");
+const secret = 'aaa';
+
+const password = localStorage.getItem("password") || secret;
 
 $("#new").submit((event)=>{
+    event.preventDefault();
+    const passwordEl = document.getElementById('password')
+     console.log(passwordEl.value, 'passss');
+    const passwordVal = passwordEl.value;
+
+    
+    const encrypted = encrypt(passwordVal, password);
+    console.log(encrypted, 'encccc');
     const body = JSON.stringify({
         name: $("#name").val(),
         username: $("#username").val(),
         website: $("#website").val(),
-        password: encrypt($("#password").val(), password)
+        password: encrypted
     })
     console.log(body)
-    event.preventDefault();
     fetch('../api/passwords/', {method:'post', headers: {
         "Content-Type": 'application/json'
       },body
@@ -49,7 +58,7 @@ $("#edit").submit((event)=>{
 });
 
 if ($("#edit").length) {
-    $("#password").val(decrypt($("#password").val(),localStorage.getItem("password")));
+    $("#password").val(decrypt($("#password").val(),password));
 }
 
 if ($(".card-password").length) {
@@ -59,7 +68,7 @@ if ($(".card-password").length) {
         let pass = passes[x];
         try {
             let encryptedValue = passes[x].children[0].textContent.trim();
-            let newContent = decrypt(encryptedValue,localStorage.getItem("password"));
+            let newContent = decrypt(encryptedValue,password);
             if (newContent) {
                 passes[x].children[0].textContent = newContent;
             }

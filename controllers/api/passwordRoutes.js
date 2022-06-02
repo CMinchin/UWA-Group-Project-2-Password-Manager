@@ -106,23 +106,31 @@ router.post('/', withAuth, async (req, res) => {
 // update password in database
 router.post('/:id', withAuth, async (req, res) => {
   console.log("congrats we got here");
+
+
+  const payload = {
+    name: req.body.name,
+    username:req.body.username,
+    password:req.body.password,
+    website:req.body.website,
+    user_id: req.session.user_id,
+  }
+  
+  // update password record in db
+  const password = await Password.findByPk(req.params.id);
+
+  if (!password) {
+    res.status(404).json([]);
+    return;
+  }
+
   try {
-    const passwordsData = await Password.update(req.body,{
-      where: {
-        id: req.params.id,
-        user_id: req.session.user_id
-      }
-    });
-    console.log(passwordsData);
-    const passwords = passwordsData.get({ plain: true });
+    await password.update(payload)
+    
 
 
-    if (!passwords) {
-      res.status(404).json([]);
-      return;
-    }
 
-    res.status(200).json(passwords);
+    res.status(200).json(password.get({plain: true}));
   } catch (err) {
     res.status(500).json(err);
     console.log(err);
