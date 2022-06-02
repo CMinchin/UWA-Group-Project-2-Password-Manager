@@ -1,4 +1,4 @@
-<form action="/signup" method="post">
+<form action="/signup" method="post" class="signup">
   <div class="form-group" id="email-signup">
       <h1 id="signup-title">Create an Account</h1>
     <label for="email">Email:</label>
@@ -12,6 +12,12 @@
   <div class="col text-center">
       <button type="submit" class="btn btn-info">Sign up</button>
   </div>
+
+  {{#if error}}
+  <div class="text-danger">
+    {{error}}
+  </div>
+  {{/if}}
   
 </form>
 <script>
