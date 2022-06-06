@@ -40,9 +40,9 @@ As a group of four: Marc, Cameron, Charles and Bambang, with a group name is: "M
 
 ## Demo
 
-- [Presentation](https://www.canva.com/design/DAFBgGIuqWk/qAjPPeiOTIg7ot--mJUIYg/edit?utm_content=DAFBgGIuqWk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+- [Presentation](https://www.canva.com/design/DAFBgGIuqWk/5Eudc7PPeOdtUj0FrLBGMA/view?utm_content=DAFBgGIuqWk&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink)
 
-- [Heroku trapperkeyper app](https://trapperkeyper.herokuapp.com/)
+- [Heroku trapperkeyper app](https://trapper-keyper.herokuapp.com/password/)
 
 ## Credits
 
